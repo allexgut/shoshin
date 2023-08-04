@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "checkJs": true,
+      "jsx": "react-jsx",
+      "module": "ES6",
+      "moduleResolution": "nodenext"
+    }
+  }
