@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-countdown": "^2.3.5",
+    "react-use": "^17.4.0"
   }
 }
