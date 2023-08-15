@@ -21,14 +21,14 @@ export function Zazen({isRunning, length}) {
     const second = 1000;
     const minute = 60 * second;
 
-    const warmupLength = 5 * second;
-    const zazenLength = 10 * second;
-    const kinhinLength = 5 * second;
-    const reminderBellInterval = 1 * second;
+    const warmupLength = 5 * minute;
+    const zazenLength = 30 * minute;
+    const kinhinLength = 5 * minute;
+    const reminderBellInterval = 5 * minute;
 
 
     const handleStartWarmup = () => {
-        console.log('MOPPAN');
+        // TODO: Play Moppan(Han) sound here.
     }
 
     const handleWarmupComplete = () => {
@@ -36,32 +36,36 @@ export function Zazen({isRunning, length}) {
     }
 
     const handleStartZazen = () => {
-        console.log('START BELL');
+        // TODO: Play Gyoban sound here.
+        // TODO Find out how the Gyoban is played or find a recording of the entire thing.
+        // TODO: Find out what else is played here (it's not only the gyoban).
     }
 
     const handleZazenTick = (e) => {
         if (e.total % reminderBellInterval === 0) {
-            console.log('REMINDER BELL');
+            // TODO: Play Keisu sound here.
         }
     }
 
     const handleZazenComplete = () => {
+        // TODO: Same as for handleStartZazen.
         if (didKinhin) {
             setCurrentState(States.CHANTING);
         } else {
             setCurrentState(States.KINHIN);
         }
-        console.log('END ZAZEN BELL');
     }
 
     const handleKinhinStart = () => {
-        console.log('KINHIN BELL');
+        // TODO: Play bell to start kinhin here.
+        // TODO: Find the name of the bell.
     }
 
     const handleKinhinComplete = () => {
         setCurrentState(States.ZAZEN);
         setDidKinhin(true);
-        console.log('KINHIN END BELL');
+        // TODO: Play bell to end kinhin here.
+        // TODO: Find the name of the bell.
     }
 
     return (
