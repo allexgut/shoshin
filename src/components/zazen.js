@@ -12,12 +12,6 @@ export function Zazen({isRunning, length}) {
     const [currentState, setCurrentState] = useState(null);
     const [didKinhin, setDidKinhin] = useState(false);
 
-    useEffect(() => {
-        if (isRunning) {
-            setCurrentState(States.WARMUP);
-        }
-    }, [isRunning])
-
     const second = 1000;
     const minute = 60 * second;
 
@@ -26,6 +20,11 @@ export function Zazen({isRunning, length}) {
     const kinhinLength = 5 * minute;
     const reminderBellInterval = 5 * minute;
 
+    useEffect(() => {
+        if (isRunning) {
+            setCurrentState(States.WARMUP);
+        }
+    }, [isRunning])
 
     const handleStartWarmup = () => {
         // TODO: Play Moppan(Han) sound here.
